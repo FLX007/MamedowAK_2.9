@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-RU-4Rt" userLabel="Animate View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-RU-4Rt" userLabel="Animate View" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="20" y="94" width="374" height="269"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLR-Fj-wGc" userLabel="Animate Label">
@@ -32,18 +32,21 @@
                                     <constraint firstItem="bLR-Fj-wGc" firstAttribute="centerY" secondItem="mFY-RU-4Rt" secondAttribute="centerY" id="bBD-ly-X3I"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFy-f6-Ke1" userLabel="Animate Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFy-f6-Ke1" userLabel="Animate Button" customClass="SpringButton" customModule="Spring">
                                 <rect key="frame" x="20" y="772" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HO0-zo-cKP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="Push">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="animateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NdC-5J-1U4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -58,6 +61,11 @@
                             <constraint firstItem="mFY-RU-4Rt" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="yeY-Pk-cLA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animateButton" destination="NFy-f6-Ke1" id="0VX-bt-imp"/>
+                        <outlet property="animateLabel" destination="bLR-Fj-wGc" id="3gm-ID-jgM"/>
+                        <outlet property="animateView" destination="mFY-RU-4Rt" id="Xa5-Hw-VZm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
